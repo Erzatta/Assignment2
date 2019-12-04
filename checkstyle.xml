@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+	<module name="Header">
+		<property name="header" value="////////////////////////////////////////////////////////////////////\n// [GIUSEPPE] [ZATTA] [1143326]\n////////////////////////////////////////////////////////////////////" />
+		<property name="fileExtensions" value="java" />
+	</module>
+    <module name="FileTabCharacter"/>
+    <module name="TreeWalker">
+        <module name="NeedBraces">
+            <property name="allowSingleLineStatement" value="true"/>
+        </module>
+        <module name="IllegalImport"/>
+        <module name="AvoidStarImport">
+            <property name="excludes" value="java.io,java.net,java.lang.Math"/>
+        </module>
+        <module name="EmptyCatchBlock">
+            <property name="exceptionVariableName" value="expected|ignore"/>
+            <property name="commentFormat" value="This is expected"/>
+        </module>
+        <module name="MethodLength">
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="max" value="60"/>
+        </module>
+        <module name="LineLength">
+            <property name="max" value="120"/>
+        </module>        
+        <module name="BooleanExpressionComplexity">
+            <property name="max" value="7"/>
+        </module>
+        <module name="CyclomaticComplexity"/>    
+    </module>
+    <module name="FileLength"/>
+</module>
+
