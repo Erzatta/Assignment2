@@ -1,9 +1,8 @@
- dist: bionic  
+dist: bionic  
 group: edge  
 language: java  
 sudo: required  
 jdk: openjdk8  
 cache:    
-    directories:      
-        - $HOME/.m2  
-script:    - mvn clean install
+    directories: "$HOME/.m2"  
+script: "mvn clean install"
