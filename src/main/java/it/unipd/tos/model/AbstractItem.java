@@ -1,0 +1,10 @@
+////////////////////////////////////////////////////////////////////
+// [GIUSEPPE] [ZATTA] [1143326]
+////////////////////////////////////////////////////////////////////
+package it.unipd.tos.model;
+
+public interface AbstractItem {
+    abstract String getNome();
+    abstract double getPrezzo();
+    abstract ItemType getTipo();
+    }
