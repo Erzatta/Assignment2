@@ -6,3 +6,7 @@ jdk: openjdk8
 cache:    
     directories: "$HOME/.m2"  
 script: "mvn clean install"
+notifications:
+    email: false
+after_success: curl -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage -d chat_id=$TELEGRAM_CHAT_ID -d "text=Build eseguita con successo!"
+after_failure: curl -X POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendMessage -d chat_id=$TELEGRAM_CHAT_ID -d "text=Che succede amico? Hai sbagliato qualcosa!"
