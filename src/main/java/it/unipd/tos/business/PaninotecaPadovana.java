@@ -26,8 +26,13 @@ public class PaninotecaPadovana implements TakeAwayBill {
         return setSconto10(actual, 50.0D);
     }
  
-    public void insertItem(MenuItem m) {
-        items.add(m);
+    public void insertItem(MenuItem m) throws TakeAwayBillException {
+        if (items.size() < 30) {
+            items.add(m);
+        } else {
+            throw new TakeAwayBillException("hai raggiunto il massimo numero di elmenti nell'ordine!");
+        }
+
     }
     public double getOurOrderPrice() {
         return getOrderPrice(items);
@@ -46,7 +51,7 @@ public class PaninotecaPadovana implements TakeAwayBill {
             }
         }
         if (ris > 5) {
-            items.get(ris).sconta(50);
+            items.get(pos).sconta(50);
         }
     }
     
