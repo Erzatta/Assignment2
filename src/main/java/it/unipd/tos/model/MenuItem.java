@@ -10,7 +10,6 @@ public final class MenuItem implements AbstractItem {
     private double prezzo;
     private ItemType tipo;
     
-    
     public MenuItem(ItemType Tipo ,String Nome, double Prezzo) throws RestaurantBillException {
         tipo = Tipo;
         if (Prezzo == 0.0 || Prezzo <= 0.0) {
@@ -36,6 +35,10 @@ public final class MenuItem implements AbstractItem {
     @Override
     public ItemType getTipo() {
         return tipo;
+    }
+    
+    public void sconta(double percentuale) {
+        prezzo = (double) Math.round(prezzo*percentuale*100)/10000;
     }
 
 }

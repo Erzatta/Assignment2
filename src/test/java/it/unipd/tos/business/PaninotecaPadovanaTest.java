@@ -15,14 +15,24 @@ public class PaninotecaPadovanaTest {
     public void initialize() {
         pd = new PaninotecaPadovana();
         pd.insertItem(new MenuItem(ItemType.Bevanda, "Ciao", 0.1D));
-        pd.insertItem(new MenuItem(ItemType.Panino, "Ciao", 0.2D));
+        pd.insertItem(new MenuItem(ItemType.Panino, "Ciao", 0.6D));
         pd.insertItem(new MenuItem(ItemType.Fritto, "Ciao", 0.3D));
     }
 
     
     @Test
-    public void getOrderPriceCorrectTest() {
-        Double conf = 0.3D+0.2D+0.1D;
+    public void setSconto50whithScontoTest() {
+        for(int i=0; i<5; i++) {
+            pd.insertItem(new MenuItem(ItemType.Panino, "Ciao", 0.6D));
+        }
+        Double conf = 0.3D+0.1D+0.3D+3.0D;
+        Double ris = pd.getOurOrderPrice();
+        assertEquals(conf, ris);
+    }
+    
+    @Test
+    public void getOrderPriceTest() {
+        Double conf = 1.0D;
         Double ris = pd.getOurOrderPrice();
         assertEquals(conf, ris);
     }
