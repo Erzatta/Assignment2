@@ -22,7 +22,7 @@ public class PaninotecaPadovanaTest {
 
     @Test
     public void getOrderPriceTest() {
-        Double conf = 1.0D;
+        Double conf = 1.5D;
         Double ris = pd.getOurOrderPrice();
         assertEquals(conf, ris);
     }
@@ -32,7 +32,7 @@ public class PaninotecaPadovanaTest {
         for(int i=0; i<5; i++) {
             pd.insertItem(new MenuItem(ItemType.Panino, "Ciao", 0.6D));
         }
-        Double conf = 0.3D+0.1D+0.3D+3.0D;
+        Double conf = 0.3D+0.1D+0.3D+3.0D+0.5D;
         Double ris = pd.getOurOrderPrice();
         assertEquals(conf, ris);
     }

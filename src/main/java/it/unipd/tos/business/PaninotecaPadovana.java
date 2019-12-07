@@ -23,7 +23,7 @@ public class PaninotecaPadovana implements TakeAwayBill {
             MenuItem get = itemsOrdered.get(i);
             actual = (double) Math.round((actual + get.getPrezzo())*100)/100;
             }
-        return setSconto10(actual, 50.0D);
+        return maggiora(setSconto10(actual, 50.0D) ,10.0D, 0.50D);
     }
  
     public void insertItem(MenuItem m) throws TakeAwayBillException {
@@ -60,6 +60,13 @@ public class PaninotecaPadovana implements TakeAwayBill {
             daScontare = daScontare - (daScontare/10);
         }
         return (double) Math.round((daScontare)*100)/100;
+    }
+    
+    private double maggiora(double daMaggiorare, double sogliaMaggiorazione, double maggiorazione) {
+        if (daMaggiorare < sogliaMaggiorazione) {
+            daMaggiorare += maggiorazione;
+        }
+        return daMaggiorare;
     }
     
 }
