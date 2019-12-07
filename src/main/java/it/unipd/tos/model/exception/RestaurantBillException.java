@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////
 // [GIUSEPPE] [ZATTA] [1143326]
 ////////////////////////////////////////////////////////////////////
-package it.unipd.tos.model;
+package it.unipd.tos.model.exception;
 
 public final class RestaurantBillException extends RuntimeException {
-    RestaurantBillException(String msg) {
+    public RestaurantBillException(String msg) {
         super(msg);
     }
 }

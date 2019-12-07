@@ -23,7 +23,7 @@
             <property name="max" value="60"/>
         </module>
         <module name="LineLength">
-            <property name="max" value="120"/>
+            <property name="max" value="1200"/>
         </module>        
         <module name="BooleanExpressionComplexity">
             <property name="max" value="7"/>
