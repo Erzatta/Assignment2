@@ -19,9 +19,15 @@ public class PaninotecaPadovanaTest {
         pd.insertItem(new MenuItem(ItemType.Fritto, "Ciao", 0.3D));
     }
 
+    @Test
+    public void getOrderPriceTest() {
+        Double conf = 1.0D;
+        Double ris = pd.getOurOrderPrice();
+        assertEquals(conf, ris);
+    }
     
     @Test
-    public void setSconto50whithScontoTest() {
+    public void getOrderPriceTestwithSconto50() {
         for(int i=0; i<5; i++) {
             pd.insertItem(new MenuItem(ItemType.Panino, "Ciao", 0.6D));
         }
@@ -31,8 +37,12 @@ public class PaninotecaPadovanaTest {
     }
     
     @Test
-    public void getOrderPriceTest() {
-        Double conf = 1.0D;
+    public void getOrderPriceTestwithSconto10() {
+        for(int i=0; i<5; i++) {
+            pd.insertItem(new MenuItem(ItemType.Bevanda, "Ciao", 10.0D));
+        }
+        Double conf = (51.0D) - (5.1D) ;
+        conf = (double) Math.round(conf*100) /100 ;
         Double ris = pd.getOurOrderPrice();
         assertEquals(conf, ris);
     }
